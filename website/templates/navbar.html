@@ -1,22 +1,23 @@
+
 <nav class="navbar" style="background-color: #277BC0;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'home' %}">Django CRM</a>
 
         <div class="position-sticky">
             {% if user.is_authenticated %}
-            <h4>{{ user.first_name }} {{ user.last_name }}</h4>
-        </div>
             <div class="position-sticky">
-            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+            <a class="btn btn-success" href="{% url 'add_record' %}">Add Record</a>
+            <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
             </div>
 
                {% else %}
+             <div class="position-sticky">
             <a class="nav-link" href="{% url 'register' %}">Register</a>
             <a class="nav-link" href="{% url 'home' %}">Login</a>
-
+            </div>
             {% endif %}
 
-        </div>
 
+        </div>
     </div>
 </nav>
